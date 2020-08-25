@@ -1,3 +1,5 @@
+# sudoku-solver.py
+
 state = [
     [0,0,0,0,0,0,0,0,0], #1
     [0,0,0,0,0,0,0,0,0], #2
@@ -8,22 +10,21 @@ state = [
     [0,0,0,0,0,0,0,0,0], #7
     [0,0,0,0,0,0,0,0,0], #8
     [0,0,0,0,0,0,0,0,0], #9
-] 
-
-def check_board_validity(bs):
-    print("check")
-    #checks if board is valid
+]
 
 def print_board(bs):
-    printstring = ""
-    #print("==================")
     for i in range(len(bs)):
+        if i % 3 == 0 and i != 0:
+            print("- - - - - - - - - - - -")
+        
         for j in range(len(bs[0])):
-            #print(str(i+1) +" : "+ str(j+1))       # jagged array traversal test
-            if j == 8:
-                printstring = printstring + " | " + (str(bs[i][j])) + "\n"
-            else:
-                printstring = printstring + " | " + (str(bs[i][j]))
-    return printstring
+            if j % 3 == 0 and j != 0:
+                print(" | ", end="")
 
-print(print_board(state))
+            if j == 8:
+                print(bs[i][j])
+            else:
+                print(str(bs[i][j]) + " ", end="")
+
+
+print_board(state)
