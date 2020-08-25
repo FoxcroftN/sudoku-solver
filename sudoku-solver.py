@@ -15,11 +15,15 @@ def check_board_validity(bs):
     #checks if board is valid
 
 def print_board(bs):
-    printstring = " "
-    print("==================")
+    printstring = ""
+    #print("==================")
     for i in range(len(bs)):
         for j in range(len(bs[0])):
             #print(str(i+1) +" : "+ str(j+1))       # jagged array traversal test
-            print(str(bs[i][j]))
+            if j == 8:
+                printstring = printstring + " | " + (str(bs[i][j])) + "\n"
+            else:
+                printstring = printstring + " | " + (str(bs[i][j]))
+    return printstring
 
-print_board(state)
+print(print_board(state))
