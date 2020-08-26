@@ -33,7 +33,13 @@ def isEmpty(val):
         return True
     else:
         return False
-    
+
+#finds the first empty sqaure and then returns that squares 
+def findEmpty(bs):
+    for i in rang(len(bs)):
+        for j in range(len(bs[0])):
+            if bs[i][j] == 0:
+                return(i, j) #(row, column)  
 
 print_board(state)
 print(isEmpty(state[2][2]))
