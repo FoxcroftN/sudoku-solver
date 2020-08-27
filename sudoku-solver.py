@@ -37,7 +37,7 @@ def isEmpty(val):
 
 #finds the first empty sqaure and then returns that squares 
 def findEmpty(bs):
-    for i in rang(len(bs)):
+    for i in range(len(bs)):
         for j in range(len(bs[0])):
             if bs[i][j] == 0:
                 return(i, j) #(row, column)
